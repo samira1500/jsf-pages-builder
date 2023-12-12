@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "ROOT",
+      "path": "../"
+    },
+    {
+      "name": "apps/pages-builder",
+      "path": "../apps/pages-builder"
+    },
+    {
+      "name": "plugins/grapesjs-blocks-bootstrap5",
+      "path": "../plugins/grapesjs-blocks-bootstrap5"
+    },
+    {
+      "name": "plugins/grapesjs-jsf",
+      "path": "../plugins/grapesjs-jsf"
+    }
+  ],
+  "settings": 
+  {
+	  "files.exclude": {
+      "../node_modules/": true
+    },
+  }
+}

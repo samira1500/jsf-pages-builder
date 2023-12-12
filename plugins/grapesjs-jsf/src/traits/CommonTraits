@@ -1,0 +1,51 @@
+// import { Trait } from "grapesjs"
+
+// export default () =>{ 
+//     return {
+//         id: {
+//             name: 'id',
+//             label: c.labels.trait_id,
+//         },
+//         for: {
+//             name: 'for',
+//             label: c.labels.trait_for,
+//         },
+//         name: {
+//             name: 'name',
+//             label: c.labels.trait_name,
+//         },
+//         placeholder: {
+//             name: 'placeholder',
+//             label: c.labels.trait_placeholder,
+//         },
+//         value: {
+//             name: 'value',
+//             label: c.labels.trait_value,
+//         },
+//         required: {
+//             type: 'checkbox',
+//             name: 'required',
+//             label: c.labels.trait_required,
+//         }
+//     }
+// };
+
+// // traits: [
+// //                     traits.value,
+// //                     traits.name,
+// //                     traits.placeholder, 
+// //                     traits.required,
+// //                     {
+// //                         label: config.labels.trait_value,
+// //                         type: 'text',
+// //                         name: 'type',
+// //                         // options: [
+// //                         //     {value: 'text', name: config.labels.type_text},
+// //                         //     {value: 'email', name: config.labels.type_email},
+// //                         //     {value: 'password', name: config.labels.type_password},
+// //                         //     {value: 'number', name: config.labels.type_number},
+// //                         //     {value: 'date', name: config.labels.type_date},
+// //                         //     {value: 'hidden', name: config.labels.type_hidden},
+// //                         // ]
+// //                     }
+// //                 ],

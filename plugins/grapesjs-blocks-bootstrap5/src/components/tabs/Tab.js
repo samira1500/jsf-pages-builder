@@ -1,0 +1,43 @@
+import constants from './constants';
+import { elHasClass } from '../../utils';
+
+export default (dc, config = {}) => {
+  const defaultType = dc.getType('default');
+  const defaultModel = defaultType.model;
+  const defaultView = defaultType.view;
+  const { tabName, navigationSelector } = constants;
+  const classId = config.classTab;
+  const type = tabName;
+
+  dc.addType(type, {
+    isComponent: (el) => {
+      if (elHasClass(el, classId)) return { type };
+    },
+    extend: 'default',
+    model: {
+      defaults: {
+        ...defaultModel.prototype.defaults,
+        name: 'Tab',
+        tagName: 'li',
+        copyable: true,
+        draggable: navigationSelector,
+
+      },
+      init() {
+        this.get('classes').pluck('name').indexOf(classId) < 0 && this.addClass(classId);
+      }
+    },
+    extendView: 'default',
+    view: {
+      init() {
+        const comps = this.model.components();
+        // Add a basic template if it's not yet initialized
+        if (!comps.length) {
+          comps.add(`
+              <a class="nav-link active" id="tab-1" data-toggle="tab" href="#tab-pane-1" role="tab" aria-controls="tab" aria-selected="true">Tab</a>
+          `);
+        }
+      },
+    },
+  });
+}

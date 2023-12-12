@@ -1,0 +1,12 @@
+@use "variables";
+@use "mixins";
+
+.silex-loader {
+  @include mixins.silex-ui-full;
+  display: flex;
+  color: variables.$secondaryColor;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$primaryColor;
+  z-index: variables.$z-loader;
+}

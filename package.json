@@ -1,0 +1,49 @@
+{
+  "name": "parent",
+  "version": "0.21.8",
+  "private": true,
+  "workspaces": [
+    "plugins/*",
+    "packages/*",
+    "apps/*"
+  ],"workspaces-all": [
+    "packages/*",
+    "plugins/*",
+    "apps/*"
+  ],
+  "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "lit-html": "^3.1.0"
+  },
+  "devDependencies": {
+    "lerna": "^7.4.2"
+  },
+  "peerDependencies": {
+    "grapesjs": "0.21.27"
+  },
+  "scripts": {
+    "all": "yarn install && yarn lint && yarn test",
+    "all-notest": "yarn install && yarn lint",
+    "build": "lerna run build",
+    "build:dev": "lerna run build:dev",
+    "build:pagebuilder:dev": "lerna run build:dev --scope pages-builder",
+    "build:grapesjs:dev": "lerna run build:dev --scope grapesjs",
+    "build:bootstrap:plugin": "lerna run build:dev --scope grapesjs-blocks-bootstrap5",
+    "build:jsf:plugin": "lerna run build:dev --scope grapesjs-jsf",
+    "check:pr": "yarn all && yarn check:headers",
+    "clean": "lerna run clean && rimraf coverage .nyc_output",
+    "lint": "lerna run lint",
+    "lint:ci": "lerna run lint:ci",
+    "prepare": "lerna run prepare",
+    "start:bootstrap:plugin": "yarn --cwd ./plugins/grapesjs-blocks-bootstrap5 start",
+    "start:jsf:plugin": "yarn --cwd ./plugins/grapesjs-jsf start",
+    "start:pagebuilder": "npm run start -w apps/pages-builder",
+    "start:pagebuilder:dev": "npm run start:dev -w apps/pages-builder",
+    "test": "lerna run test",
+    "test:ci": "lerna run test:ci",
+    "test:coverage": "lerna run test:coverage",
+    "test:coverage:ci": "yarn glsp coverageReport .",
+    "upgrade:next": "yarn upgrade -p \"@eclipse-glsp.*|sprotty.*\" --next ",
+    "watch": "lerna run --parallel watch"
+  }
+}

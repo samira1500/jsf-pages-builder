@@ -1,0 +1,33 @@
+// All colors
+// /!\ Duplicated in the grapesjs/index.ts too => keep in sync
+$primaryColor: #333333;
+$secondaryColor: #ddd;
+$tertiaryColor: #8873FE;
+$quaternaryColor: #A291FF;;
+$darkerPrimaryColor: #292929;
+$lighterPrimaryColor: #575757;
+
+$topBarHeight: 40px;
+$projectBarWidth: 35px;
+$projectPanelWidth: 13%;
+$projectPanelMinWidth: 150px;
+$viewsPanelWidth: 15%; // 15% is grapesjs default
+$footerHeight: 30px;
+$transitionSpeedMedium: .15s;
+$transitionSpeedSlow: .30s;
+$prefix: 'gjs-';
+$pn-prefix: '#{$prefix}pn-';
+$cv-prefix: '#{$prefix}cv-';
+$z-dialog-inline: 10;
+$z-loader: 10;
+
+$fontFamily: 'Ubuntu', sans-serif;
+
+:root {
+  --primaryColor: #{$primaryColor};
+  --secondaryColor: #{$secondaryColor};
+  --tertiaryColor: #{$tertiaryColor};
+  --quaternaryColor: #{$quaternaryColor};
+  --darkerPrimaryColor: #{$darkerPrimaryColor};
+  --lighterPrimaryColor: #{$lighterPrimaryColor};
+}

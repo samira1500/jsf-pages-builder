@@ -1,0 +1,65 @@
+@use "variables" as *;
+
+.page-panel-container {
+  .pages__wrapper {
+    height: inherit;
+  }
+  .pages {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .pages__main {
+      flex: 1; // take the available space in height
+      border: 1px solid $darkerPrimaryColor;
+      background-color: $primaryColor;
+    }
+    .pages__page {
+      display: flex;
+      align-items: center;
+      background-color: $darkerPrimaryColor;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      &:hover {
+        background-color: $primaryColor;
+        .pages__page-name {
+          color: $quaternaryColor;
+        }
+      }
+    }
+    .pages__page-selected {
+      background-color: $lighterPrimaryColor;
+      cursor: default;
+      .pages__page-name {
+        color: $quaternaryColor;
+      }
+    }
+    .pages__main.pages__single-page .pages__remove-btn {
+      visibility: hidden;
+    }
+    .pages__page-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 13px;
+      font-size: initial;
+      text-transform: capitalize;
+      padding: 10px 6px;
+      flex: 1;
+      text-align: left;
+    }
+    .pages__icon {
+      padding: 10px 6px;
+      cursor: pointer;
+    }
+    .pages__icon:hover {
+      color: $quaternaryColor;
+    }
+  }
+  .#{$pn-prefix}buttons {
+    flex-direction: column;
+    .#{$pn-prefix}btn {
+    }
+    .#{$pn-prefix}btn:first-child {
+    }
+  }
+}

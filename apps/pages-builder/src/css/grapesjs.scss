@@ -1,0 +1,160 @@
+@use "variables" as *;
+@use "grapesjs-plugins";
+
+#gjs {
+  flex: 1 1 auto;
+}
+
+
+.#{$prefix} {
+  @each $cnum, $ccol in (one, $primaryColor), (two, $secondaryColor), (three, $tertiaryColor), (four, $quaternaryColor) {
+    &#{$cnum} {
+      &-bg {
+        background-color: $ccol;
+      }
+
+      &-color {
+        color: $ccol;
+
+        &-h:hover {
+          color: $ccol;
+        }
+      }
+    }
+  }
+}
+
+.#{$cv-prefix}canvas,
+.#{$pn-prefix}panel,
+.#{$pn-prefix}commands {
+  left: $projectBarWidth;
+}
+.#{$pn-prefix}project-bar-panel,
+.#{$pn-prefix}views,
+.#{$pn-prefix}options,
+.#{$pn-prefix}views-container {
+  left: auto;
+}
+.#{$cv-prefix}canvas {
+  width: calc(100% - $viewsPanelWidth - $projectBarWidth);
+}
+.#{$pn-prefix}devices-c {
+  display: flex;
+  .#{$prefix}device-label {
+    display: none;
+  }
+}
+.#{$pn-prefix}views-container {
+  width: $viewsPanelWidth;
+}
+
+.gjs-editor {
+  font-family: $fontFamily;
+  font-size: 0.75rem;
+}
+
+// Dialogs
+.gjs-mdl-header {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  padding: 20px;
+  border-bottom: 1px solid $lighterPrimaryColor;
+  .gjs-mdl-btn-close {
+    top: 15px;
+  }
+}
+
+// Inside the canvas
+.gjs-toolbar {
+  background-color: $tertiaryColor;
+}
+.gjs-resizer-h {
+  border-color: $tertiaryColor;
+}
+.gjs-com-badge, .gjs-com-badge-red, .gjs-badge {
+    background-color: $tertiaryColor;
+}
+.gjs-cv-canvas .gjs-highlighter, .gjs-cv-canvas .gjs-highlighter-sel {
+    outline: 1px solid $tertiaryColor;
+}
+
+// Property panels
+.gjs-pn-buttons {
+  justify-content: unset;
+}
+
+/*
+*/
+// Font awesome 5 fix
+// https://github.com/GrapesJS/grapesjs/issues/644#issuecomment-833215677
+.gjs-editor-cont .fa {
+	font-weight: 400;
+}
+
+.fa-square-o:before {
+	content: "\f0c8";
+}
+
+.fa-trash-o:before {
+	content: "\f1f8";
+}
+
+.fa-map-o:before {
+	content: "\f279";
+}
+
+.fa-youtube-play:before {
+	content: "\f04b";
+}
+
+/* Fix: open close chevrons: FA5 has the tags in different order ?!!? */
+.fa-chevron-right:before {
+	content: "\f054";
+}
+
+.fa-chevron-down:before {
+	content: "\f078";
+}
+
+// Font awesome 6 fix
+.fa-cog:before {
+  font-weight: 900;
+}
+
+.fa-paint-brush:before {
+  font-weight: 900;
+}
+
+.fa-arrows-alt:before {
+	content: "\f065";
+  font-weight: 900;
+}
+
+.fa-caret-down:before {
+  content: "\f0d7";
+  font-weight: 900;
+}
+
+.fa-caret-right:before {
+  content: "\f0da";
+  font-weight: 900;
+}
+
+.fa-trash:before {
+  content: "\f2ed";
+  font-weight: 900;
+}
+
+.fa-list:before {
+  content: "\f03a";
+  font-weight: 900;
+}
+
+.fa-sign-out:before {
+  content: "\f08b";
+  font-weight: 900;
+}
+
+.fa-diamond:before {
+  content: "\f3a5";
+}
