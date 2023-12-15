@@ -2,7 +2,7 @@ import type { ComponentManager, Editor } from 'grapesjs';
 import traits from '../traits/inputTextTraits';
 import categories from '../../blockCategories';
 import i18next from '../../i18n';
-import { ComponentBuilder } from '../../@types/ComponentBuilder';
+import { ComponentBuilder } from '../../model/ComponentBuilder';
 
 class InputTextBuilder extends ComponentBuilder {
     
@@ -42,9 +42,9 @@ class InputTextBuilder extends ComponentBuilder {
             extendView: 'input',
             view: {
                 tagName: () => 'input',
-                // attributes: {
-                //     type: 'text',
-                // },
+                attributes: {
+                    type: 'text',
+                },
             }
             // extendFnView: ['updateAttributes'],
             // {

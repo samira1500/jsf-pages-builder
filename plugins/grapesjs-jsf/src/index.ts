@@ -1,10 +1,11 @@
 import grapesjs, { Plugin } from 'grapesjs';
-import JsfPluginOptions from "./@types/jsfPluginOptions"; 
-import loadJSFComponents from './jsf';
+import JsfPluginOptions from "./model/jsfPluginOptions"; 
+import loadJSFElements from './jsf';
 import i18next from './i18n';
 
 const plugin: Plugin<JsfPluginOptions> =  (editor, options) => {
-    loadJSFComponents(editor);
+    loadJSFElements(editor);
+    //loadPrimefacesElements(editor);
 }
 
 export default plugin;

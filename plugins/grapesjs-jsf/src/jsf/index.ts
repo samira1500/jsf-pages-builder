@@ -5,6 +5,7 @@ export default (editor: Editor, config = {}) => {
 
     const componentManager = editor.DomComponents;
 
+    //jsfTraits(editor);
     jsfComponents(editor);
 
 }
