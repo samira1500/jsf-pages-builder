@@ -1,0 +1,11 @@
+{
+    "groups": {
+        "containers": "JSF Containers",
+        "forms": "JSF Forms"
+    },
+    "components": {
+        "form":"Form",
+        "input_text":"Input Text"
+    }
+
+}

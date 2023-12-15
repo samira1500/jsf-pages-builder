@@ -1,0 +1,12 @@
+{
+    "id": "ID",
+    "for": "For",
+    "name": "Name",
+    "placeholder": "Placeholder",
+    "value": "Value",
+    "required": "Required",
+    "title": "Title",
+    "rendered": "Rendered",
+    "disabled": "Disabled",
+    "ajax": "Ajax"
+}

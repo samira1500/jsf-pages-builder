@@ -13,7 +13,8 @@
     "start": "webpack-dev-server --progress --hot",
     "start:grapesjscli": "grapesjs-cli serve",
     "build:grapesjscli": "grapesjs-cli build",
-    "bump": "npm version patch -m 'Bump v%s'"
+    "bump": "npm version patch -m 'Bump v%s'",
+    "i18n:int": "i18next-resources-for-ts interface -i ./src/locales/en -o ./src/@types/resources.d.ts"
   },
   "keywords": [
     "grapesjs",
@@ -34,5 +35,9 @@
     "webpack-dev-server": "^4.15.1",
     "webpack-hot-middleware": "^2.25.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "i18next": "^23.7.9",
+    "i18next-resources-for-ts": "^1.4.0"
+  }
 }

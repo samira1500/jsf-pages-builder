@@ -28,20 +28,31 @@ module.exports = (env = {}) => {
 
     return {
         mode: env.production ? 'production' : 'development',
-        entry: path.resolve (__dirname, 'src/index.js'),
+        entry: path.resolve (__dirname, 'src/index.ts'),
         devtool: 'inline-source-map',
         output: {
             path: path.resolve (__dirname, 'dist'),
             publicPath: "",
-            filename: `${name}.min.js`
+            filename: `${name}.min.js`,
+            libraryTarget: 'global',
+            library: 'grapesjs-jsf',
         },
-        // module: {
-        //     rules: [{
-        //         test: /\.js$/,
-        //         loader: 'babel-loader',
-        //         include: /src/,
-        //     }]
-        // },
+        module: {
+            rules: [
+                {
+                    test: /\.tsx?$/,
+                    use: "ts-loader",
+                },
+                // {
+                //     test: /\.js$/,
+                //     loader: 'babel-loader',
+                //     include: /src/,
+                // }
+            ]
+        },
+        resolve: {
+            extensions: [".tsx", ".ts", ".js"]
+        },
         devServer: {
             port: 18080,
             open: '/',

@@ -1,71 +1,13 @@
+import grapesjs, { Plugin } from 'grapesjs';
+import JsfPluginOptions from "./@types/jsfPluginOptions"; 
+import loadJSFComponents from './jsf';
+import i18next from './i18n';
 
-import { Editor } from 'grapesjs'
-import loadCommands from './commands';
-import loadTraits from './traits';
-import loadComponents from './components';
-
-export default (editor: Editor, opts) => {
-
-  const default_blocks = {
-    // FORM
-    jsfInputText: true,
-  };
-
-  const default_labels = {
-    // FORM
-    jsfInputText: 'JSF Input Text',
-  };
-  
-  const default_categories = {
-    'jsfForms': true,
-  };
-
-  const opts_blocks = opts.blocks || {};
-  const opts_labels = opts.labels || {};
-  const opts_categories = opts.blockCategories || {};
-  delete opts['blocks'];
-  delete opts['labels'];
-  delete opts['blockCategories'];
-  let options = { ...{
-    blocks: Object.assign(default_blocks, opts_blocks),
-    labels: Object.assign(default_labels, opts_labels),
-    blockCategories: Object.assign(default_categories, opts_categories),
-    optionsStringSeparator: '::',
-    gridDevices: true,
-    gridDevicesPanel: false,
-    classNavigation: 'nav',
-    classTabPanes: 'tab-content',
-    classTabPane: 'tab-pane',
-    classTab: 'nav-item',
-  },  ...opts };
-
-  loadCommands(editor, options);
-  loadTraits(editor, options);
-  loadComponents(editor, options);
-  loadDevices(editor, options);
-  loadCss(editor, options);
-
-
+const plugin: Plugin<JsfPluginOptions> =  (editor, options) => {
+    loadJSFComponents(editor);
 }
-export default grapesjs.plugins.add('grapesjs-blocks-bootstrap5', (editor, opts = {}) => {
 
-  window.editor = editor;
+export default plugin;
 
-  const opts_blocks = opts.blocks || {};
-  const opts_labels = opts.labels || {};
-  const opts_categories = opts.blockCategories || {};
-  delete opts['blocks'];
-  delete opts['labels'];
-  delete opts['blockCategories'];
-
-
-  console.log("******** options are");
-  console.log(options);
-
-  // Add components
-  loadCommands(editor, options);
-  loadTraits(editor, options);
-  loadComponents(editor, options);
-  loadDevices(editor, options);
-  loadCss(editor, options);
-});
+// let x = i18next.t("components.input_text",{ns: "blocks"});
+// console.log("*** x = " + x);

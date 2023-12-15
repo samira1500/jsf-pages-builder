@@ -44,6 +44,7 @@
     "test:coverage": "lerna run test:coverage",
     "test:coverage:ci": "yarn glsp coverageReport .",
     "upgrade:next": "yarn upgrade -p \"@eclipse-glsp.*|sprotty.*\" --next ",
-    "watch": "lerna run --parallel watch"
+    "watch": "lerna run --parallel watch",
+    "i18n:int": "lerna run i18n:int"
   }
 }
