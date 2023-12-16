@@ -5,7 +5,7 @@ export default [
     all.name,
     all.for,
     all.placeholder,
-    all.value,
+    all.textValue,
     all.disabled,
     all.rendered,
     all.required,

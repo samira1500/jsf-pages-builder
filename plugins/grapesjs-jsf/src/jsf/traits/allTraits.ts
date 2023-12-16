@@ -22,8 +22,9 @@ export default {
         name: 'title',
         label: i18next.t("title", { ns: "traits"})
     },
-    value: {
+    textValue: {
         name: 'value',
+        type: 'textExpression',
         label: i18next.t("value", { ns: "traits"})
     },
     required: {

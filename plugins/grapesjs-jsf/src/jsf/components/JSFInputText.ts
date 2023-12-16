@@ -42,9 +42,9 @@ class InputTextBuilder extends ComponentBuilder {
             extendView: 'input',
             view: {
                 tagName: () => 'input',
-                attributes: {
-                    type: 'text',
-                },
+                // attributes: {
+                //     type: 'text',
+                // },
             }
             // extendFnView: ['updateAttributes'],
             // {

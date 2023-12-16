@@ -22,7 +22,14 @@ interface Resources {
     "title": "Title",
     "rendered": "Rendered",
     "disabled": "Disabled",
-    "ajax": "Ajax"
+    "ajax": "Ajax",
+    "expression": "Expression",
+    "traitTypes": {
+      "expression": {
+        "modalTitle": "Insert your expression here ...",
+        "modalTextAreaPlaceholder": "Insert your expression here ..."
+      }
+    }
   }
 }
 
